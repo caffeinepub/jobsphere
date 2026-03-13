@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "BricolageGrotesque";
+  src: url("/assets/fonts/BricolageGrotesque.woff2") format("woff2");
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PlusJakartaSans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --background: 0.09 0.012 255;
+    --foreground: 0.96 0.006 255;
+    --card: 0.13 0.015 255;
+    --card-foreground: 0.96 0.006 255;
+    --popover: 0.13 0.015 255;
+    --popover-foreground: 0.96 0.006 255;
+    --primary: 0.78 0.22 145;
+    --primary-foreground: 0.09 0.012 255;
+    --secondary: 0.18 0.02 255;
+    --secondary-foreground: 0.85 0.01 255;
+    --muted: 0.2 0.018 255;
+    --muted-foreground: 0.58 0.012 255;
+    --accent: 0.78 0.15 60;
+    --accent-foreground: 0.09 0.012 255;
+    --destructive: 0.62 0.22 25;
+    --destructive-foreground: 0.96 0.006 255;
+    --border: 0.24 0.02 255;
+    --input: 0.2 0.018 255;
+    --ring: 0.78 0.22 145;
+    --radius: 0.5rem;
+    --chart-1: 0.78 0.22 145;
+    --chart-2: 0.78 0.15 60;
+    --chart-3: 0.62 0.18 200;
+    --chart-4: 0.72 0.18 310;
+    --chart-5: 0.62 0.22 25;
+    --sidebar: 0.11 0.013 255;
+    --sidebar-foreground: 0.96 0.006 255;
+    --sidebar-primary: 0.78 0.22 145;
+    --sidebar-primary-foreground: 0.09 0.012 255;
+    --sidebar-accent: 0.18 0.02 255;
+    --sidebar-accent-foreground: 0.85 0.01 255;
+    --sidebar-border: 0.24 0.02 255;
+    --sidebar-ring: 0.78 0.22 145;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "PlusJakartaSans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "BricolageGrotesque", sans-serif;
+  }
+}
+
+@layer utilities {
+  .glow-primary {
+    box-shadow: 0 0 20px oklch(0.78 0.22 145 / 0.3);
+  }
+  .glow-primary-sm {
+    box-shadow: 0 0 10px oklch(0.78 0.22 145 / 0.25);
+  }
+  .text-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.78 0.22 145),
+      oklch(0.78 0.15 60)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .card-hover {
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s
+      ease;
+  }
+  .card-hover:hover {
+    border-color: oklch(0.78 0.22 145 / 0.4);
+    box-shadow: 0 0 20px oklch(0.78 0.22 145 / 0.12);
+    transform: translateY(-2px);
+  }
+}
